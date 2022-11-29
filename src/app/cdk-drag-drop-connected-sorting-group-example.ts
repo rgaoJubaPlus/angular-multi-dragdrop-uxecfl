@@ -197,7 +197,7 @@ export class CdkDragDropConnectedSortingGroupExample {
         'y: ' + (boundingClientRect.y - parentPosition.top)
       );
 
-      console.log('ended:' + JSON.stringify(event.source.getFreeDragPosition));
+      console.log('ended:' + JSON.stringify(event.source.getFreeDragPosition()));
     },
 
     getPosition(el: any) {
@@ -215,7 +215,7 @@ export class CdkDragDropConnectedSortingGroupExample {
       let el = e.item.element.nativeElement;
       if (el.classList.contains('selected')) {
         // the dragged element was of the "selected" class
-        console.log('each element' + el);
+        console.log('each element' + JSON.stringify(el));
         this.multiSelect = false; // disable multiSelect
       }
     },
