@@ -16,9 +16,9 @@ import {
   styleUrls: ['cdk-drag-drop-connected-sorting-group-example.css'],
 })
 export class CdkDragDropConnectedSortingGroupExample {
-  todo = ['1a', '2b', '3c', '4d', '5e'];
+  todo = ['reel1a', 'reel2b', 'reel3c', 'reel4d', 'reel5e'];
 
-  done = ['a1', 'b2', 'c3', 'd4', 'e5'];
+  done = ['reela1', 'reelb2', 'reelc3', 'reeld4', 'reele5'];
 
   drop(event: CdkDragDrop<string[]>) {
     // If current element has ".selected"
@@ -282,18 +282,18 @@ export class CdkDragDropConnectedSortingGroupExample {
       } else {
         // If in different containers
 
-        // remove the "DragErase" from the list
-        this.dragListCopy = this.dragListCopy.filter(
-          (el) => el !== this.dragErase
-        );
+        // // remove the "DragErase" from the list
+        // this.dragListCopy = this.dragListCopy.filter(
+        //   (el) => el !== this.dragErase
+        // );
 
-        // Pass item by item to initial list
-        for (let i = 0; i < e.previousContainer.data.length; i++) {
-          e.previousContainer.data[i] = this.dragListCopy[i];
-        }
-        for (let i = 0; i < this.dragList.length; i++) {
-          e.previousContainer.data.pop();
-        }
+        // // Pass item by item to initial list
+        // for (let i = 0; i < e.previousContainer.data.length; i++) {
+        //   e.previousContainer.data[i] = this.dragListCopy[i];
+        // }
+        // for (let i = 0; i < this.dragList.length; i++) {
+        //   e.previousContainer.data.pop();
+        // }
 
         let otherListCopy = [...e.container.data]; // list of new container
         otherListCopy.splice(e.currentIndex, 0, ...this.dragList); // put elements in otherListCopy
